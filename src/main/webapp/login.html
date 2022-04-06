@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="css/style.css" rel="stylesheet">
-<title>로그인</title>
+<title>로그인-V1.0</title>
 </head>
 
 
@@ -17,21 +17,49 @@
 		</div>
 
 		<div class="a01">
-			<div>
-				<span>ID</span> <input>
-			</div>
+			<form method="post" action="mypage.html" onsubmit="return LoginChk()">
+				<div>
+					<span>ID</span> <input type="" name="" id="mid" value="">
+				</div>
 
-			<div>
-				<span>PW</span> <input>
-			</div>
+				<div>
+					<span>PW</span> <input type="" name="" id="mpw" value="">
+				</div>
 
-			<button onclick="location.href ='mypage.html'">Log in</button>
-
+				<button type="submit">Log in</button>
+			</form>
 		</div>
+
 		<div class="cscenter">
+
 			<a href="join01.html">회원가입</a>
+
 		</div>
+
 	</div>
+
+	<script type="text/javascript">
+		function LoginChk() {
+			let mid = document.getElementById("mid");
+			let mpw = document.getElementById("mpw");
+			if (mid.value == '') {
+				alert("아이디를 입력하세요.");
+				mid.focus();//빈 값일때 아이디로 포커스
+				return false;
+
+			}
+			if (mpw.value == '') {
+				alert("비밀번호를 입력하세요.");
+				mpw.focus();//빈 값일때 비밀번호로 포커스
+				return false;
+
+			}
+			console.log("폼 내에서 전송버튼 클릭 확인됨");
+			return true;
+
+		}
+	</script>
+
 </body>
 
 </html>
