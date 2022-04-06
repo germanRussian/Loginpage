@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang=ko>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,8 +19,8 @@
 		<form action="join02.html" onsubmit="return join02();">
 			<!-- 서비스 이용약관 동의 -->
 			<div class="joinbox">
-				<label for="agree1">서비스 이용약관 동의</label> <input type="checkbox"
-					id="agree1" name ="" value = "" checked="checked">
+				<label for="agree1">서비스 이용약관 동의</label>
+				<input type="checkbox"	id="agree1" name="" value="" checked="checked">
 
 				<div class="terms">
 					<b>대한민국 애국가</b> <br> <br>
@@ -40,8 +40,8 @@
 
 			<!-- 개인정보 수집 및 이용 동의 -->
 			<div class="joinbox">
-				<label for="agree2">개인정보 수집 및 이용 동의</label><input type="checkbox"
-					id="agree2" name ="" value = "" required = "required">
+				<label for="agree2">개인정보 수집 및 이용 동의</label>
+				 <input type="checkbox" id="agree2" name="" value="" required="required">
 
 				<div class="terms">
 					<b>대한민국 헌법 전문</b> <br> <br>
@@ -59,8 +59,8 @@
 
 			<!-- 개인정보 3차 제공 동의 -->
 			<div class="joinbox">
-				<label for="agree3">개인정보 3차 제공 동의</label><input type="checkbox"
-					id="agree3" name ="" value = "">
+				<label for="agree3">개인정보 3차 제공 동의</label> 
+				<input type="checkbox" id="agree3" name="" value="">
 
 				<div class="terms">
 					<b>The Korean Government’s Basic Position on Dokdo</b> <br> <br>
@@ -74,50 +74,70 @@
 						continue to defend Korea’s territorial integrity over Dokdo.</p>
 				</div>
 			</div>
-		
+
 
 
 
 			<!-- 취소 확인 버튼 -->
 			<div class="joinbtn w100 tC">
 				<div>
+					<label for="allselect">
+					<input id="allselect" type="checkbox" onclick="chkAuto(this);">
+					 <span>전체 동의</span>
+					 </label>
+				</div>
+
+				<div>
 					<button onclick="history.go(-1)">취 소</button>
-					<button type = "button" onclick="join02()">확 인</button>
+					<button type="button" onclick="join02()">확 인</button>
 				</div>
 			</div>
 		</form>
 	</div>
-<script type="text/javascript">
+	<script type="text/javascript">
+		let agree1 = document.getElementById("agree1");
+		let agree2 = document.getElementById("agree2");
+		let agree3 = document.getElementById("agree3");
+		function join02() {
 
-function join02() {
-	let agree1 = document.getElementById("agree1");
-	if(!agree1.checked){
-		alert("서비스 이용약관 동의를 확인해주시기 바랍니다.");
-		agree1.focus();
-		return;
-	}
-	console.log(agree1.checked ==true);
-	
-	
-	let agree2 = document.getElementById("agree2");
-	if(!agree2.checked){
-		alert("개인정보 수집 및 이용 동의를 확인해주시기 바랍니다.");
-		agree2.focus();
-		return;
-	}
-	console.log(agree2.checked ==true);
-	
-	
-	let agree3 = document.getElementById("agree3");
-	if(!agree3.checked){
-		alert("개인정보 3차 제공 동의를 확인해주시기 바랍니다.");
-		agree3.focus();
-		return;
-	}
-	location.href="join02.html";
-	//location.replace("join02.html");
-}
+			if (!agree1.checked) {
+				alert("서비스 이용약관 동의를 확인해주시기 바랍니다.");
+				agree1.focus();
+				return;
+			}
 
-</script>
+			if (!agree2.checked) {
+				alert("개인정보 수집 및 이용 동의를 확인해주시기 바랍니다.");
+				agree2.focus();
+				return;
+			}
+
+			if (!agree3.checked) {
+				alert("개인정보 3차 제공 동의를 확인해주시기 바랍니다.");
+				agree3.focus();
+				return;
+			}
+
+			location.href = "join02.html";
+			//location.replace("join02.html");
+
+		}
+
+		function chkAuto(t) {
+
+			if (t.checked) {
+				
+				agree1.checked = true;
+				agree2.checked = true;
+				agree3.checked = true;
+			} else {
+				agree1.checked = false;
+				agree2.checked = false;
+				agree3.checked = false;
+			}
+			console.log("약관이 모두 동의 되었습니다." + t.checked);
+
+		}
+	</script>
 </body>
 </html>
