@@ -16,7 +16,7 @@
 
 	<!-- 내용 -->
 	<div class="pd16">
-		<form action="join2.html" onsubmit="return join2();">
+		<form action="join02.html" onsubmit="return join02();">
 			<!-- 서비스 이용약관 동의 -->
 			<div class="joinbox">
 				<label for="agree1">서비스 이용약관 동의</label> <input type="checkbox"
@@ -82,19 +82,19 @@
 			<div class="joinbtn w100 tC">
 				<div>
 					<button onclick="history.go(-1)">취 소</button>
-					<button type = "submit">확 인</button>
+					<button type = "button" onclick="join02()">확 인</button>
 				</div>
 			</div>
 		</form>
 	</div>
 <script type="text/javascript">
 
-function join2() {
+function join02() {
 	let agree1 = document.getElementById("agree1");
 	if(!agree1.checked){
 		alert("서비스 이용약관 동의를 확인해주시기 바랍니다.");
 		agree1.focus();
-		return false;
+		return;
 	}
 	console.log(agree1.checked ==true);
 	
@@ -103,7 +103,7 @@ function join2() {
 	if(!agree2.checked){
 		alert("개인정보 수집 및 이용 동의를 확인해주시기 바랍니다.");
 		agree2.focus();
-		return false;
+		return;
 	}
 	console.log(agree2.checked ==true);
 	
@@ -112,13 +112,10 @@ function join2() {
 	if(!agree3.checked){
 		alert("개인정보 3차 제공 동의를 확인해주시기 바랍니다.");
 		agree3.focus();
-		return false;
+		return;
 	}
-	console.log(agree3.checked == true);
-	
-	
-	console.log("확인 버튼 작동");
-	return true;
+	location.href="join02.html";
+	//location.replace("join02.html");
 }
 
 </script>
