@@ -77,7 +77,7 @@ select { border:0; outline: 0; appearance:none; text-align: right; font-weight: 
 .cscenter span { color: #5d47f3; }
 
 .page01, .page02, .page03, .page05 { background: #f7f8fb; }
-.page01 .a01 { margin-top: 67px; }
+.page01 .a01 { margin-top: 20px; }
 .page01 .a01 div, .page01 .a01 button { border-radius: 50px; }
 .page01 .a01 div { background: #fff; border: 1px solid #e8e8e8; margin-bottom: 12px; }
 .page01 .a01 div input { width: 70%; line-height: 2; margin-top: 3px; border: 0; }
