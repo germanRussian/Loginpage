@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/style.css" rel="stylesheet">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<title>회원가입</title>
+
+</head>
+<body class="page07">
+
+
+	<!-- 제목 -->
+	<div class="jointit w100 tC">
+		<b>회원가입</b>
+	</div>
+
+	<form method="post" onsubmit="return join02()">
+		<!-- 내용 -->
+		<div class="pd16">
+
+			<!-- 이름 -->
+			<div class="joinbox">
+				<h2>이름</h2>
+				<input type="text" name="" id="uname" value="">
+
+			</div>
+			<!-- 학교 -->
+			<div class="joinbox">
+				<div>
+					<h2 class="inline">학교</h2>
+
+				</div>
+				<input type="text" name="" id="uschool" value="">
+
+			</div>
+
+			<!-- 학년 반  -->
+			<div class="joinbox">
+				<div>
+					<h2 class="inline">학년/반</h2>
+					<input type="text" name="" id="ugrade" value="">
+				</div>
+				
+					
+
+				
+			</div>
+
+
+			<!-- 휴대폰번호 -->
+			<div>
+				<div>
+					<h2 class="inline">휴대폰번호</h2>
+					<span>※휴대폰번호를 ID로 사용합니다.</span>
+				</div>
+				<div class="pnum" id="telnum">
+
+					<input type="text" name="" id="utel" value="" maxlength="3">
+					- <input type="text" name="" id="utel1" value="" maxlength="4">
+					- <input type="text" name="" id="utel2" value="" maxlength="4">
+
+				</div>
+
+			</div>
+
+			<!-- 비밀번호 -->
+			<div id="allupw">
+				<div class="joinbox">
+					<div>
+						<h2 class="inline">비밀번호</h2>
+						<span>※최대 12자리.</span>
+
+					</div>
+					<input type="password" name="" id="upw" value="" onfocusout="">
+					<label>
+				</div>
+
+
+				<!-- 비밀번호확인 -->
+				<div class="joinbox">
+					<h2 class="inline">비밀번호확인</h2>
+					<input type="password" name="" id="upw2" value=""> <label></label>
+
+
+				</div>
+			</div>
+
+			<!-- 노선 -->
+			<div class="joinbox">
+				<h2>노선</h2>
+				<div class="sltbox">
+					<select name="" id="busroot">
+						<option >노선</option>
+						<option >A코스</option>
+						<option >B코스</option>
+						<option >C코스</option>
+					</select>
+				</div>
+			</div>
+
+			<!-- 탑승장소 -->
+			<div class="joinbox">
+				<h2>탑승장소</h2>
+				<div class="sltbox">
+					<select name="" id="place">
+						<option >탑승장소</option>
+						<option >aa장소</option>
+						<option >bb장소</option>
+						<option >cc장소</option>
+					</select>
+				</div>
+			</div>
+
+			<!-- 가입하기 버튼 -->
+			<div class="joinbtn w100 tC">
+				<div>
+					<button type="submit">가입하기</button>
+
+				</div>
+			</div>
+
+		</div>
+	</form>
+
+	<script>
+		/* 여기에 작성하세요. */
+
+		$(document).ready(function() {
+
+			$("button").click(function() {
+
+				/* 이름 */
+				if ($("#uname").val() == '') {
+					alert("이름을 입력해주세요.");
+					return false;
+				}
+
+				/* 학교 */
+				if ($("#uschool").val() == '') {
+					alert("학교를 입력해주세요.");
+					$("#uschool").focus();
+					return false;
+				}
+
+				/* 학년/반 */
+				if ($("#ugrade").val() == '') {
+					alert("학년 / 반을 확인해주세요.");
+					return false;
+				}
+
+				/* 비밀번호 */
+				if ($("#upw").val() == ''|| $("#upw2").val() == '') {
+					alert("비밀번호를 입력해주세요.");
+					return false;
+				
+				}
+				if ($("#upw").val() != $("#upw2").val()) {
+					alert("비밀번호가 다릅니다.");
+					$("#upw").val('');
+					$("#upw2").val('');
+					return false;
+				}
+
+				/* 노선 */
+				if ($("#busroot").val()== '노선') {
+					alert("노선을 확인해주세요.");
+					return false
+				}
+				if ($("#place").val() == '탑승장소') {
+					alert("탑승장소를 확인해주세요.");
+					return false
+				}
+				
+				
+				
+				
+				/* if ($("#busroot").val() == '코스'|| $("#place").val() =='장소') {
+					alert("노선과 코스를 확인해주세요.");
+					return false
+				} */
+				
+			})
+			/* 휴대폰번호 커서 이동 */
+			$("#telnum").keydown(function() {
+				if ($("#utel").val().length == '3') {
+					$("#utel1").focus();
+
+				}
+				if ($("#utel1").val().length == '4') {
+					$("#utel2").focus();
+					
+
+				}
+
+			});
+
+		});
+	</script>
+
+</body>
+</html>
+
+
+
+
